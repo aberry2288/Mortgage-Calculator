@@ -91,3 +91,8 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.colgap {
+    column-gap: 30px;
+}
+
