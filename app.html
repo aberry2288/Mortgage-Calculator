@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
-    <title>App Name: A Coding Challenge</title>
+    <title>Mortgage Calculator: A Coding Challenge</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <img src="/img/Tree Styled White.png" height="50" alt="developer logo">
-                    &nbsp;App Name
+                    &nbsp;Mortgage Calculator
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -60,10 +60,64 @@
         </nav>
     </header>
 
-    <main class="container py-3">
-        <h1>APP UI GOES HERE</h1>
-        <input class="form-control my-3" id="message" placeholder="Enter a message" type="text">
-        <button class="btn btn-primary" id="btnSubmit" type="button">Display Message</button>
+    <main class="container-xxl m-3 py-3 g-3">
+        <div class="row row-cols-1">
+            <div class="col-12 col-md-4 border border-4 border-dark">
+                <h5 class="mt-2">Loan Amount:</h5>
+                <input class="form-control" type="number" id="loanAmount">
+                <h5 class="mt-2">Term (Months):</h5>
+                <input class="form-control" type="number" id="monthsAmount">
+                <h5 class="mt-2">Interest Rate:</h5>
+                <input class="form-control" type="number" id="interestAmount">
+                <button class="btn btn-primary my-3" onclick="getValues()">Calculate</button>
+            </div>
+            <div class="col-12 col-md-8 border border-4 border-dark">
+                <h5 class="mt-3">Your Monthly Payments:</h5>
+                <div
+                    class="display-6 text-success my-3 rounded-3 border border-2 border-success-subtle p-2 bg-body-secondary w-50">
+                    <div id="monthlyPayments">
+                        <!--payment amount goes here-->
+                    </div>
+                </div>
+                <h5 class="mt-3">Total Principal:</h5>
+                <div
+                    class="display-6 text-success my-3 rounded-3 border border-2 border-success-subtle p-2 bg-body-secondary w-50">
+                    <div id="totalPrincipal">
+                        <!--principal amount goes here-->
+                    </div>
+                </div>
+                <h5 class="mt-3">Total Interest:</h5>
+                <div
+                    class="display-6 text-success my-3 rounded-3 border border-2 border-success-subtle p-2 bg-body-secondary w-50">
+                    <div id="totalInterest">
+                        <!--Interest amount goes here-->
+                    </div>
+                </div>
+                <h5 class="mt-3">Total Cost:</h5>
+                <div
+                    class="display-6 text-success my-3 rounded-3 border border-2 border-success-subtle p-2 bg-body-secondary w-50">
+                    <div id="totalCost">
+                        <!--cost amount goes here-->
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive mt-3">
+                <table class="table table-striped border shadow">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Month</th>
+                            <th>Payment</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Total Interest</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="breakdown-table">
+                        <!--breakdown goes here-->
+                    </tbody>
+                </table>
+            </div>
     </main>
 
     <footer class="footer container-fluid py-3">
@@ -85,6 +139,17 @@
         </div>
     </footer>
 
+    <template id="loan-row-template">
+        <tr>
+            <td data-id="month"></td>
+            <td data-id="payment"></td>
+            <td data-id="principal"></td>
+            <td data-id="interest"></td>
+            <td data-id="totalInterest"></td>
+            <td data-id="balance"></td>
+        </tr>
+    </template>
+
 
 
     <!-- Bootstrap JS -->
@@ -98,9 +163,7 @@
     <!-- Customer JavaScript Page -->
     <script src="/js/site.js"></script>
 
-    <script>
-        document.getElementById('btnSubmit').addEventListener('click', displayMessage);
-    </script>
+   
 </body>
 
 </html>
