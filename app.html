@@ -101,23 +101,25 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive mt-3">
-                <table class="table table-striped border shadow">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Month</th>
-                            <th>Payment</th>
-                            <th>Principal</th>
-                            <th>Interest</th>
-                            <th>Total Interest</th>
-                            <th>Balance</th>
-                        </tr>
-                    </thead>
-                    <tbody id="breakdown-table">
-                        <!--breakdown goes here-->
-                    </tbody>
-                </table>
-            </div>
+        </div>
+        <div class="table-responsive mt-3">
+            <table class="table table-striped border shadow">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Month</th>
+                        <th>Payment</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>Total Interest</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody id="breakdown-table">
+                    <th>Enter your loan details above to see a breakdown of your monthly payments.</th>
+                    <!--breakdown goes here-->                    
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <footer class="footer container-fluid py-3">
@@ -141,12 +143,12 @@
 
     <template id="loan-row-template">
         <tr>
-            <td data-id="month"></td>
-            <td data-id="payment"></td>
-            <td data-id="principal"></td>
-            <td data-id="interest"></td>
-            <td data-id="totalInterest"></td>
-            <td data-id="balance"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
     </template>
 
@@ -163,7 +165,7 @@
     <!-- Customer JavaScript Page -->
     <script src="/js/site.js"></script>
 
-   
+
 </body>
 
 </html>
